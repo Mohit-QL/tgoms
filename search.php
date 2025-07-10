@@ -65,6 +65,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 						<option value="projectName" <?php if (($_POST['filter'] ?? '') == "projectName") echo "selected=1" ?>>Project Name</option>
 						<option value="orderNumber" <?php if (($_POST['filter'] ?? '') == "orderNumber") echo "selected=1" ?>>Order Number</option>
 						<option value="missingValue" <?php if (($_POST['filter'] ?? '') == "missingValue") echo "selected=1" ?>>Missing Value</option>
+						<option value="purchaseNumber" <?php if (($_POST['filter'] ?? '') == "purchaseNumber") echo "selected=1" ?>>Purchase Number</option>
 						<option value="keyword" <?php if (($_POST['filter'] ?? '') == "keyword") echo "selected=1" ?>>Keyword</option>
 					</select></label><br />
 
@@ -262,11 +263,16 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 																	clients.email LIKE '%$searchStringEscaped%' OR
 																	orders.projectName LIKE '%$searchStringEscaped%' OR
 																	orders.type LIKE '%$searchStringEscaped%' OR
-                    												orders.category LIKE '%$searchStringEscaped%'
+                    												orders.category LIKE '%$searchStringEscaped%' OR
+                    												orders.poNo LIKE '%$searchStringEscaped%'
 																)
 															";
 								}
 							}
+							break;
+
+						case "purchaseNumber":
+							$selectOrderClientSql .= "AND orders.poNo LIKE '%" . mysqli_real_escape_string($conn, $_POST['searchString']) . "%' ";
 							break;
 					}
 				}

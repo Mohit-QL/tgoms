@@ -9,6 +9,13 @@ if (mysqli_num_rows($checkColumn) == 0) {
 	mysqli_query($conn, $alterOrderSql) or die(mysqli_error($conn));
 }
 
+$showOrderSql = "SHOW COLUMNS FROM orders LIKE 'poNo'";
+$checkColumn = mysqli_query($conn, $showOrderSql);
+if (mysqli_num_rows($checkColumn) == 0) {
+	$alterOrderSql = "ALTER TABLE orders ADD poNo VARCHAR(50)";
+	mysqli_query($conn, $alterOrderSql) or die(mysqli_error($conn));
+}
+
 $description = [];
 $color = [];
 $vendor = [];
@@ -287,6 +294,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 
 		$miscDescription = addSmartQuotes(getPostValue('miscDescription'));
 		$pmethod = getPostValue('pmethod');
+		$poNo = getPostValue('poNo');
 
 		$artistInProgress = $_POST['artistInProgress_'];
 		$artistComplete = $_POST['artistComplete_'];
@@ -334,10 +342,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 
 		/* Add a new order */
 		if ($_POST['addOrder'] == "Add Order" || isset($_POST['saveAsNewOrder'])) {
-			$insertOrderSql = "INSERT INTO orders (pmethod, clientID, repID, artistID, departmentID, projectName, type, category, shippingClient, shippingContact, shippingAddress, shippingCity, shippingState, shippingZip, front, back, sleeve, other, frontDetails, backDetails, sleeveDetails, otherDetails, orderDate, artDueDate, printDate, dueDate, specialInstructions, productionNotes, artInstructions, comments, redAlert, artType, artFilename, artistInProgress, artistComplete, artistSentToApprove, artistRevisions, artistApproved, artistSepsDone, artistProofFilm, artistHours, stageOrderGoods, stageGoodsReceived, stageOrderStaging, stagePrintingStitching, stageComplete, stageBilled, stagePaid, salesTax, screenCharge, dieCharge, artCharge, artNumber, screenNumber, colorCharge, shippingCharge, miscCharge, miscDescription, deposit, shipBlind) VALUES('" . $pmethod . "', " . $clientID . ", " . $repID . ", " . $artistID . ", " . $departmentID . ", '" . $projectName . "', '" . $type . "', '" . $category . "', '" . $shippingClient . "', '" . $shippingContact . "', '" . $shippingAddress . "', '" . $shippingCity . "', '" . $shippingState . "', '" . $shippingZip . "', '" . $front . "', '" . $back . "', '" . $sleeve . "', '" . $other . "', '" . $frontDetails . "', '" . $backDetails . "', '" . $sleeveDetails . "', '" . $otherDetails . "', " . ($orderDate !== 'NULL' ? $orderDate : 'NULL') . ", " . ($artDueDate !== 'NULL' ? $artDueDate : 'NULL') . ", " . ($printDate !== 'NULL' ? $printDate : 'NULL') . ", " . ($dueDate !== 'NULL' ? $dueDate : 'NULL') . ", '" . $specialInstructions . "', '" . $productionNotes . "', '" . $artInstructions . "', '" . $comments . "', '" . $redAlert . "', '" . $artType . "', '" . $artFilename . "', '" . $artistInProgress . "', '" . $artistComplete . "', '" . $artistSentToApprove . "', '" . $artistRevisions . "', '" . $artistApproved . "', '" . $artistSepsDone . "', '" . $artistProofFilm . "', '" . $artistHours . "', 
-			'" . $stageOrderGoods . "', '" . $stageGoodsReceived . "', '" . $stageOrderStaging . "', '" . $stagePrintingStitching . "', '" . $stageComplete . "', '" . $stageBilled . "', '" . $stagePaid . "', " . $salesTax . ", " . $screenCharge . ", " . $dieCharge . ", " . $artCharge . ", " . $artNumber . ",
-			" . $screenNumber . ", " . $colorCharge . ", " . $shippingCharge . ", " . $miscCharge . ", '" . $miscDescription . "', " . $deposit . ", " . $shipBlind . ")";
-
+			$insertOrderSql = "INSERT INTO orders (pmethod, poNo, clientID, repID, artistID, departmentID, projectName, type, category, shippingClient, shippingContact, shippingAddress, shippingCity, shippingState, shippingZip, front, back, sleeve, other, frontDetails, backDetails, sleeveDetails, otherDetails, orderDate, artDueDate, printDate, dueDate, specialInstructions, productionNotes, artInstructions, comments, redAlert, artType, artFilename, artistInProgress, artistComplete, artistSentToApprove, artistRevisions, artistApproved, artistSepsDone, artistProofFilm, artistHours, stageOrderGoods, stageGoodsReceived, stageOrderStaging, stagePrintingStitching, stageComplete, stageBilled, stagePaid, salesTax, screenCharge, dieCharge, artCharge, artNumber, screenNumber, colorCharge, shippingCharge, miscCharge, miscDescription, deposit, shipBlind) VALUES('" . $pmethod . "', '" . $poNo . "', " . $clientID . ", " . $repID . ", " . $artistID . ", " . $departmentID . ", '" . $projectName . "', '" . $type . "', '" . $category . "', '" . $shippingClient . "', '" . $shippingContact . "', '" . $shippingAddress . "', '" . $shippingCity . "', '" . $shippingState . "', '" . $shippingZip . "', '" . $front . "', '" . $back . "', '" . $sleeve . "', '" . $other . "', '" . $frontDetails . "', '" . $backDetails . "', '" . $sleeveDetails . "', '" . $otherDetails . "', " . ($orderDate !== 'NULL' ? $orderDate : 'NULL') . ", " . ($artDueDate !== 'NULL' ? $artDueDate : 'NULL') . ", " . ($printDate !== 'NULL' ? $printDate : 'NULL') . ", " . ($dueDate !== 'NULL' ? $dueDate : 'NULL') . ", '" . $specialInstructions . "', '" . $productionNotes . "', '" . $artInstructions . "', '" . $comments . "', '" . $redAlert . "', '" . $artType . "', '" . $artFilename . "', '" . $artistInProgress . "', '" . $artistComplete . "', '" . $artistSentToApprove . "', '" . $artistRevisions . "', '" . $artistApproved . "', '" . $artistSepsDone . "', '" . $artistProofFilm . "', '" . $artistHours . "', '" . $stageOrderGoods . "', '" . $stageGoodsReceived . "', '" . $stageOrderStaging . "', '" . $stagePrintingStitching . "', '" . $stageComplete . "', '" . $stageBilled . "', '" . $stagePaid . "', " . $salesTax . ", " . $screenCharge . ", " . $dieCharge . ", " . $artCharge . ", " . $artNumber . ", " . $screenNumber . ", " . $colorCharge . ", " . $shippingCharge . ", " . $miscCharge . ", '" . $miscDescription . "', " . $deposit . ", " . $shipBlind . ")";
 			mysqli_query($conn, $insertOrderSql) or die(mysqli_error($conn));
 
 			$orderID = mysqli_insert_id($conn);
@@ -354,7 +359,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 			if ($_FILES["file"]["size"] > 0 && isset($_REQUEST['orderID']))
 				$artFilename = getArtFilenameForID($_POST['orderID']);
 
-			$updateOrderSql = "UPDATE orders SET clientID='" . $clientID . "', repID='" . $repID . "', artistID='" . $artistID . "', departmentID='" . $departmentID . "', type='" . $type . "', category='" . $category . "', projectName='" . $projectName . "', shipBlind='" . $shipBlind . "', shippingContact='" . $shippingContact . "', shippingClient='" . $shippingClient . "', shippingAddress='" . $shippingAddress . "', shippingCity='" . $shippingCity . "', shippingState='" . $shippingState . "', shippingZip='" . $shippingZip . "', front='" . $front . "', back='" . $back . "', sleeve='" . $sleeve . "', other='" . $other . "', frontDetails='" . $frontDetails . "', backDetails='" . $backDetails . "', sleeveDetails='" . $sleeveDetails . "', otherDetails='" . $otherDetails . "', orderDate=" . $orderDate . ", artDueDate=" . $artDueDate . ", printDate=" . $printDate . ", dueDate=" . $dueDate . ", specialInstructions='" . $specialInstructions . "', productionNotes='" . $productionNotes . "', artInstructions='" . $artInstructions . "', comments='" . $comments . "', redAlert='" . $redAlert . "', artType='" . $artType . "', artFilename='" . $artFilename . "', artistInProgress='" . $artistInProgress . "', artistComplete='" . $artistComplete . "', artistSentToApprove='" . $artistSentToApprove . "', artistRevisions='" . $artistRevisions . "', artistApproved='" . $artistApproved . "', artistSepsDone='" . $artistSepsDone . "', artistProofFilm='" . $artistProofFilm . "', artistHours='" . $artistHours . "', stageOrderGoods='" . $stageOrderGoods . "', stageGoodsReceived='" . $stageGoodsReceived . "', stageOrderStaging='" . $stageOrderStaging . "', stagePrintingStitching='" . $stagePrintingStitching . "', stageComplete='" . $stageComplete . "', stageBilled='" . $stageBilled . "', stagePaid='" . $stagePaid . "', salesTax='" . $salesTax . "', screenNumber='" . $screenNumber . "', screenCharge='" . $screenCharge . "', dieCharge='" . $dieCharge . "', artNumber='" . $artNumber . "', artCharge='" . $artCharge . "', colorCharge='" . $colorCharge . "', shippingCharge='" . $shippingCharge . "', miscCharge='" . $miscCharge . "', miscDescription='" . $miscDescription . "', deposit='" . $deposit . "', pmethod='" . $pmethod . "', lockedByName = NULL WHERE id=" . $_POST['orderID'];
+			$updateOrderSql = "UPDATE orders SET clientID='" . $clientID . "', repID='" . $repID . "', artistID='" . $artistID . "', departmentID='" . $departmentID . "', type='" . $type . "', category='" . $category . "', projectName='" . $projectName . "', shipBlind='" . $shipBlind . "', shippingContact='" . $shippingContact . "', shippingClient='" . $shippingClient . "', shippingAddress='" . $shippingAddress . "', shippingCity='" . $shippingCity . "', shippingState='" . $shippingState . "', shippingZip='" . $shippingZip . "', front='" . $front . "', back='" . $back . "', sleeve='" . $sleeve . "', other='" . $other . "', frontDetails='" . $frontDetails . "', backDetails='" . $backDetails . "', sleeveDetails='" . $sleeveDetails . "', otherDetails='" . $otherDetails . "', orderDate=" . $orderDate . ", artDueDate=" . $artDueDate . ", printDate=" . $printDate . ", dueDate=" . $dueDate . ", specialInstructions='" . $specialInstructions . "', productionNotes='" . $productionNotes . "', artInstructions='" . $artInstructions . "', comments='" . $comments . "', redAlert='" . $redAlert . "', artType='" . $artType . "', artFilename='" . $artFilename . "', artistInProgress='" . $artistInProgress . "', artistComplete='" . $artistComplete . "', artistSentToApprove='" . $artistSentToApprove . "', artistRevisions='" . $artistRevisions . "', artistApproved='" . $artistApproved . "', artistSepsDone='" . $artistSepsDone . "', artistProofFilm='" . $artistProofFilm . "', artistHours='" . $artistHours . "', stageOrderGoods='" . $stageOrderGoods . "', stageGoodsReceived='" . $stageGoodsReceived . "', stageOrderStaging='" . $stageOrderStaging . "', stagePrintingStitching='" . $stagePrintingStitching . "', stageComplete='" . $stageComplete . "', stageBilled='" . $stageBilled . "', stagePaid='" . $stagePaid . "', salesTax='" . $salesTax . "', screenNumber='" . $screenNumber . "', screenCharge='" . $screenCharge . "', dieCharge='" . $dieCharge . "', artNumber='" . $artNumber . "', artCharge='" . $artCharge . "', colorCharge='" . $colorCharge . "', shippingCharge='" . $shippingCharge . "', miscCharge='" . $miscCharge . "', miscDescription='" . $miscDescription . "', deposit='" . $deposit . "', pmethod='" . $pmethod . "', poNo='" . $poNo . "', lockedByName = NULL WHERE id=" . $_POST['orderID'];
 			mysqli_query($conn, $updateOrderSql) or die(mysqli_error($conn));
 			echo '<div style="color:darkgreen;text-align:center;margin:auto">Order has been successfully edited.</div>';
 		}
@@ -544,6 +549,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 			$miscDescription = addSmartQuotes($entry['miscDescription']);
 			$deposit = $entry['deposit'];
 			$pmethod = $entry['pmethod'];
+			$poNo = $entry['poNo'];
 
 			/* Grab the client info using the client ID */
 			$selectClientSql = "SELECT * FROM clients WHERE id='" . $clientID . "'";
@@ -710,6 +716,14 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 					?>
 				</select>
 			</fieldset>
+			<fieldset style="width:200px; position:absolute; top:325px; left:700px">
+				<legend>Purchase Number</legend>
+				<textarea name="poNo" rows="1" cols="22"><?php echo isset($poNo) ? htmlspecialchars($poNo) : ''; ?></textarea>
+			</fieldset>
+
+
+
+
 			<fieldset style="width:105px; position:absolute; top:105px; left:831px">
 				<legend>Category</legend>
 				<label>Screen Print <input name="category" value="Screen Print" type="radio" onclick='categoryChange(false)' <?php if ($category == "Screen Print") echo "checked='yes'"; ?> /></label><br />
@@ -723,7 +737,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 				<label>Other <input name="category" value="Other" type="radio" onclick='categoryChange(false)' <?php if ($category == "Other") echo "checked='yes'"; ?> /></label><br />
 			</fieldset>
 
-			<div style="position:absolute; top:-12px;">
+			<div style="position:absolute; top:25px;">
 				<div style="width:1000px; position:absolute; top:360px;">
 					<label>Rep: <select name="repID" style="width:80px"><?php echo $repList ?? ''; ?></select></label>
 					&nbsp;&nbsp;&nbsp;
