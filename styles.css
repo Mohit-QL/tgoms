@@ -1,0 +1,192 @@
+/* CSS Document */
+
+body
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+label
+{
+
+}
+
+div.initialDiv
+{
+	font-size:9px;
+	text-align:center;
+	width:70px;
+	float:left;
+}
+
+fieldset
+{
+	-moz-border-radius: 7pt;
+	text-align:right;
+}
+
+input.initialButton
+{
+	background-color:#DDDDDD;
+	border-width:2px;
+	border-style:outset;
+	margin:2px 0px 2px 8px;	
+	width:40px;
+}
+
+
+
+input.text
+{
+	background-color:#DDDDDD;
+	border:1px solid #000000;
+	margin:2px 0px;
+	padding:1px;
+	height:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+input.tabletext
+{
+	background-color:#DDDDDD;
+	border:1px solid #000000;
+	margin:2px 2px;
+	padding:1px;
+	height:16px;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+input.tabletotaltext
+{
+	background-color:#DDDDDD;
+	border:1px solid #000000;
+	margin:2px 2px;
+	padding:1px;
+	height:16px;
+	text-align:right;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+
+textarea
+{
+	background-color:#DDDDDD;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+select
+{
+	background-color:#DDDDDD;
+	border:1px solid #000000;
+	position:relative;
+	margin:2px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+.topNaviButton
+{
+	width:115px; 
+	height:24px;
+	margin:2px 2px;
+	padding:2px 2px;
+}
+
+a img
+{
+	border:0;
+}
+
+.alertBox
+{
+	border:2px solid rgb(235,103,6);
+	background-color: rgb(25,145,225);
+	text-align: center;
+	font-weight: bold;
+	padding:3px;
+}
+
+.calendar
+{
+	font-size:1.5em;
+	display:inline;
+	float:left;
+	margin:10px;
+}
+
+.calendar-month
+{
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+.calendar td
+{
+	width:38px;
+}
+
+.cal-nums
+{
+	position:relative;
+	width:20px;
+	top:-12px;
+	left:16px;
+}
+
+.top-cal-num
+{
+	color: red;
+	font-size:0.6em;
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+.bottom-cal-num
+{
+	color: blue;
+	font-size:0.6em;
+	margin:0;
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+.today-span
+{
+	color: green;
+	font-weight: bold;
+}
+
+table.previewTable {
+	border-width: 2px;
+	border-spacing: 0px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: white;
+	width: 70%;
+	margin: auto;
+}
+table.previewTable th {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+}
+table.previewTable td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	text-align: left;
+	font-size: 10px;
+	width: 14%;
+}

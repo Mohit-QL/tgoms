@@ -1,0 +1,18 @@
+<form action="<!--DATA-formurl-->" method=post>
+
+<table border=0 cellpadding=0 cellspacing=10><tr><td align=left>
+<img src="<!--DATA-omsbasicdir-->oms.gif" align='top'>
+</td><td align=left valign=middle>
+
+<input type=hidden value="<!--DATA-enterpass1-->" name='pass1'>
+<input type=hidden value="<!--DATA-enterpass2-->" name='pass2'>
+<input type=submit name='neworder' value='NEW ORDER FORM' style="font-family: Arial; font-size: 12; height:22px;">
+<input type=submit name='sortorders' value='SORT' style="font-family: Arial; font-size: 12; height:22px;">
+<input type=submit name='searchorders' value='SEARCH' style="font-family: Arial; font-size: 12; height:22px;">
+<p>
+<input type=submit name='artboard' value='ART BOARD' style="font-family: Arial; font-size: 12; height:22px;">
+<input type=submit name='controlpanel' value='CONTROL PANEL' style="font-family: Arial; font-size: 12; height:22px;">
+<input type=submit name='logout' value='LOG OUT' style="font-family: Arial; font-size: 12; height:22px;">
+</td></tr></table>
+</form>
+<p>

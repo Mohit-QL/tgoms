@@ -1,0 +1,43 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body>
+<!--DATA-header-->
+<form action="<!--DATA-formurl-->" method=post>
+<input type=hidden value="<!--DATA-enterpass1-->" name="pass1">
+<input type=hidden value="<!--DATA-enterpass2-->" name="pass2">
+
+<font style="font-family: Arial; font-size: 12;"><u>Search Orders</u></label>
+<p>
+
+<table border=0 cellspacing=0 cellpadding=2><tr>
+  <td align=left><font class="normaltext">Search by:</td>
+  <td align=left><select name="filter" style="width: 150; text-align: left;">
+    <option value="billtoclient">Client Name</option>
+    <option value="billtocontact">Contact Name</option>
+    <option value="billtoproject">Project Name</option>
+  </select></td>
+  </tr><tr>
+  <td align=left><font class="normaltext">Search for:</td>
+  <td align=left><font class="normaltext"><input size=20 name="filterstring" style="width: 150; text-align: left;" class="inputbox"></td>
+  </tr><tr>
+  <td align=left><font class="normaltext">Order Status:</td>
+  <td align=left><font class="normaltext"><select name="archived">
+    <option value="order:billed:paid:completed">All Orders</option>
+    <option value="">Active Orders</option>
+    <option value="billed:paid:completed">Archived Orders</option>
+    <option value="billed">Billed Orders</option>
+    <option value="paid">Paid Orders</option>
+    <option value="completed">Completed Orders</option></select></td>
+  </tr>
+
+
+</table>
+<p>
+<input type=hidden name="sortorders" value='123456'>
+<input type=submit value="Display Search Results">
+</form>
+</body>
+</html>

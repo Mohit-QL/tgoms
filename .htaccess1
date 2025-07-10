@@ -1,0 +1,16 @@
+#Action application/x-pair-sphp /cgi-bin/php53.cgi
+#AddType application/x-pair-sphp .php
+
+Action application/x-pair-sphp /cgi-bin/php52.cgi
+AddType application/x-pair-sphp .php
+
+
+Redirect /oms.pl http://tgoms.net/index.php
+
+
+#Gzip
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/php test/phtml text/htm text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>
+#End Gzip
+

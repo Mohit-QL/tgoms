@@ -1,0 +1,15 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body><font class="normaltext">
+
+<!--DATA-header-->
+
+Welcome to OMS.
+<br>
+Please select a function from the menu above.
+
+</body>
+</html>

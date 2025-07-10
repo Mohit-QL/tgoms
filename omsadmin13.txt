@@ -1,0 +1,599 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style2.css">
+</head>
+
+<body onload="javascript:window.print();"><font face=arial size=1>
+<table cellpadding=2 cellspacing=0 border=0>
+<tr><td align=left valign=top colspan=3>
+<table cellpadding=1 cellspacing=0 border=0>
+<tr><td align=left valign=top colspan=3><font style="font-family: Arial; font-size: 12;">
+  <table cellpadding=3 cellspacing=0 border=0>
+    <tr><td align=left valign=top><font style="font-family: Arial; font-size: 12;">
+    Bill to:<br><img src='' height=0 width=150></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">
+    Ship to:<br><img src='' height=0 width=150></td>
+    <td align=left rowspan=8 valign=top><font style="font-family: Arial; font-size: 12;"><img src='' width=150 height=0><br></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">&nbsp;</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">&nbsp;</td>
+
+    </tr><tr>
+
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_billtoclient--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_shiptoclient--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">Type:</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_type--></td>
+
+    </tr><tr>
+
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_billtocontact--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_shiptocontact--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">Category:</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_category--></td>
+
+    </tr><tr>
+
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_billtoproject--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_shiptoproject--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">Rep:</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_repname--></td>
+
+    </tr><tr>
+
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_billtoaddress--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_shiptoaddress--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">Order date:</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_orderdue--></td>
+
+    </tr><tr>
+
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_billtocity-->, <!--DATA-form_billtostate-->, <!--DATA-form_billtozip--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_shiptocity-->, <!--DATA-form_shiptostate-->, <!--DATA-form_shiptozip--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">Art Due:</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_artdue--></td>
+
+    </tr><tr>
+
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_billtophone--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_shiptophone--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">Scheduled to Print:</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_scheduledtoprint--></td>
+
+    </tr><tr>
+
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_billtoemail--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_shiptoemail--></td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;">Due date:</td>
+    <td align=left valign=top><font style="font-family: Arial; font-size: 12;"><!--DATA-form_duedate--></td>
+
+    </tr>
+</table>
+</td></tr>
+
+<tr><td align=center valign=top colspan=3><font style="font-family: Arial; font-size: 12;">
+<br>
+<table border=0 cellpadding=1 cellspacing=0><tr><td><textarea name='specialinstructions' onClick="this.select();" style="width: 380; height: 70; text-align: left; font-family: Arial; font-size: 12;"><!--DATA-form_specialinstructions--></textarea></td>
+  <td><textarea name='productionnotes' onClick="this.select();" style="width: 380; height: 70; text-align: left; font-family: Arial; font-size: 12;"><!--DATA-form_productionnotes--></textarea></td>
+</tr></table>
+</td></tr>
+<tr><td align=left valign=top colspan=2>
+
+<table border=0 cellpadding=1 cellspacing=0>
+<tr>
+<td align=center><font style="width: 55; text-align: center; font-family: Arial; font-size: 12;">Quantity</font></td>
+<td align=center><font style="width: 150; text-align: center; font-family: Arial; font-size: 12;">Style/Description</font></td>
+<td align=center><font style="width: 55; text-align: center; font-family: Arial; font-size: 12;">Color</font></td>
+<td align=center><font style="width: 55; text-align: center; font-family: Arial; font-size: 12;">Vendor</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">YXS</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">YS</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">YM</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">YL</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">YXL</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">S</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">M</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">L</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">XL</font></td>
+<td align=center><font style="width: 30; text-align: center; font-family: Arial; font-size: 12;">XXL</font></td>
+<td align=center><font style="width: 40; text-align: center; font-family: Arial; font-size: 12;">XXXL</font></td>
+<td align=center><font style="width: 40; text-align: center; font-family: Arial; font-size: 12;">XXXXL</font></td>
+<td align=center><font style="width: 40; text-align: center; font-family: Arial; font-size: 12;">Misc</font></td>
+
+</tr><tr>
+
+<td align=center><input name="1quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_1quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="1style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_1style-->" onchange="maketotals();"></td>
+<td align=center><input name="1color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_1color-->" onchange="maketotals();"></td>
+<td align=center><input name="1vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_1vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="1vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="1vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1vs-->" onchange="maketotals();"></td>
+<td align=center><input name="1vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1vm-->" onchange="maketotals();"></td>
+<td align=center><input name="1vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1vl-->" onchange="maketotals();"></td>
+<td align=center><input name="1vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="1s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1s-->" onchange="maketotals();"></td>
+<td align=center><input name="1m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1m-->" onchange="maketotals();"></td>
+<td align=center><input name="1l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1l-->" onchange="maketotals();"></td>
+<td align=center><input name="1xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1xl-->" onchange="maketotals();"></td>
+<td align=center><input name="1xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_1xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="1xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_1xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="1xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_1xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="1misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_1misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="2quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_2quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="2style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_2style-->" onchange="maketotals();"></td>
+<td align=center><input name="2color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_2color-->" onchange="maketotals();"></td>
+<td align=center><input name="2vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_2vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="2vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="2vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2vs-->" onchange="maketotals();"></td>
+<td align=center><input name="2vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2vm-->" onchange="maketotals();"></td>
+<td align=center><input name="2vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2vl-->" onchange="maketotals();"></td>
+<td align=center><input name="2vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="2s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2s-->" onchange="maketotals();"></td>
+<td align=center><input name="2m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2m-->" onchange="maketotals();"></td>
+<td align=center><input name="2l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2l-->" onchange="maketotals();"></td>
+<td align=center><input name="2xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2xl-->" onchange="maketotals();"></td>
+<td align=center><input name="2xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_2xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="2xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_2xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="2xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_2xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="2misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_2misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="3quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_3quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="3style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_3style-->" onchange="maketotals();"></td>
+<td align=center><input name="3color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_3color-->" onchange="maketotals();"></td>
+<td align=center><input name="3vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_3vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="3vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="3vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3vs-->" onchange="maketotals();"></td>
+<td align=center><input name="3vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3vm-->" onchange="maketotals();"></td>
+<td align=center><input name="3vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3vl-->" onchange="maketotals();"></td>
+<td align=center><input name="3vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="3s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3s-->" onchange="maketotals();"></td>
+<td align=center><input name="3m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3m-->" onchange="maketotals();"></td>
+<td align=center><input name="3l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3l-->" onchange="maketotals();"></td>
+<td align=center><input name="3xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3xl-->" onchange="maketotals();"></td>
+<td align=center><input name="3xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_3xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="3xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_3xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="3xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_3xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="3misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_3misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="4quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_4quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="4style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_4style-->" onchange="maketotals();"></td>
+<td align=center><input name="4color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_4color-->" onchange="maketotals();"></td>
+<td align=center><input name="4vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_4vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="4vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="4vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4vs-->" onchange="maketotals();"></td>
+<td align=center><input name="4vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4vm-->" onchange="maketotals();"></td>
+<td align=center><input name="4vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4vl-->" onchange="maketotals();"></td>
+<td align=center><input name="4vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="4s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4s-->" onchange="maketotals();"></td>
+<td align=center><input name="4m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4m-->" onchange="maketotals();"></td>
+<td align=center><input name="4l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4l-->" onchange="maketotals();"></td>
+<td align=center><input name="4xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4xl-->" onchange="maketotals();"></td>
+<td align=center><input name="4xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_4xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="4xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_4xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="4xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_4xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="4misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_4misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="5quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_5quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="5style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_5style-->" onchange="maketotals();"></td>
+<td align=center><input name="5color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_5color-->" onchange="maketotals();"></td>
+<td align=center><input name="5vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_5vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="5vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="5vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5vs-->" onchange="maketotals();"></td>
+<td align=center><input name="5vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5vm-->" onchange="maketotals();"></td>
+<td align=center><input name="5vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5vl-->" onchange="maketotals();"></td>
+<td align=center><input name="5vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="5s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5s-->" onchange="maketotals();"></td>
+<td align=center><input name="5m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5m-->" onchange="maketotals();"></td>
+<td align=center><input name="5l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5l-->" onchange="maketotals();"></td>
+<td align=center><input name="5xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5xl-->" onchange="maketotals();"></td>
+<td align=center><input name="5xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_5xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="5xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_5xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="5xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_5xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="5misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_5misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="6quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_6quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="6style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_6style-->" onchange="maketotals();"></td>
+<td align=center><input name="6color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_6color-->" onchange="maketotals();"></td>
+<td align=center><input name="6vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_6vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="6vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="6vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6vs-->" onchange="maketotals();"></td>
+<td align=center><input name="6vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6vm-->" onchange="maketotals();"></td>
+<td align=center><input name="6vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6vl-->" onchange="maketotals();"></td>
+<td align=center><input name="6vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="6s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6s-->" onchange="maketotals();"></td>
+<td align=center><input name="6m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6m-->" onchange="maketotals();"></td>
+<td align=center><input name="6l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6l-->" onchange="maketotals();"></td>
+<td align=center><input name="6xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6xl-->" onchange="maketotals();"></td>
+<td align=center><input name="6xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_6xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="6xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_6xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="6xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_6xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="6misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_6misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="7quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_7quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="7style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_7style-->" onchange="maketotals();"></td>
+<td align=center><input name="7color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_7color-->" onchange="maketotals();"></td>
+<td align=center><input name="7vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_7vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="7vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="7vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7vs-->" onchange="maketotals();"></td>
+<td align=center><input name="7vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7vm-->" onchange="maketotals();"></td>
+<td align=center><input name="7vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7vl-->" onchange="maketotals();"></td>
+<td align=center><input name="7vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="7s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7s-->" onchange="maketotals();"></td>
+<td align=center><input name="7m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7m-->" onchange="maketotals();"></td>
+<td align=center><input name="7l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7l-->" onchange="maketotals();"></td>
+<td align=center><input name="7xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7xl-->" onchange="maketotals();"></td>
+<td align=center><input name="7xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_7xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="7xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_7xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="7xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_7xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="7misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_7misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="8quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_8quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="8style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_8style-->" onchange="maketotals();"></td>
+<td align=center><input name="8color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_8color-->" onchange="maketotals();"></td>
+<td align=center><input name="8vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_8vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="8vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="8vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8vs-->" onchange="maketotals();"></td>
+<td align=center><input name="8vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8vm-->" onchange="maketotals();"></td>
+<td align=center><input name="8vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8vl-->" onchange="maketotals();"></td>
+<td align=center><input name="8vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="8s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8s-->" onchange="maketotals();"></td>
+<td align=center><input name="8m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8m-->" onchange="maketotals();"></td>
+<td align=center><input name="8l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8l-->" onchange="maketotals();"></td>
+<td align=center><input name="8xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8xl-->" onchange="maketotals();"></td>
+<td align=center><input name="8xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_8xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="8xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_8xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="8xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_8xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="8misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_8misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="9quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_9quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="9style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_9style-->" onchange="maketotals();"></td>
+<td align=center><input name="9color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_9color-->" onchange="maketotals();"></td>
+<td align=center><input name="9vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_9vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="9vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="9vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9vs-->" onchange="maketotals();"></td>
+<td align=center><input name="9vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9vm-->" onchange="maketotals();"></td>
+<td align=center><input name="9vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9vl-->" onchange="maketotals();"></td>
+<td align=center><input name="9vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="9s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9s-->" onchange="maketotals();"></td>
+<td align=center><input name="9m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9m-->" onchange="maketotals();"></td>
+<td align=center><input name="9l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9l-->" onchange="maketotals();"></td>
+<td align=center><input name="9xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9xl-->" onchange="maketotals();"></td>
+<td align=center><input name="9xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_9xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="9xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_9xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="9xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_9xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="9misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_9misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="10quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_10quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="10style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_10style-->" onchange="maketotals();"></td>
+<td align=center><input name="10color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_10color-->" onchange="maketotals();"></td>
+<td align=center><input name="10vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_10vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="10vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="10vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10vs-->" onchange="maketotals();"></td>
+<td align=center><input name="10vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10vm-->" onchange="maketotals();"></td>
+<td align=center><input name="10vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10vl-->" onchange="maketotals();"></td>
+<td align=center><input name="10vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="10s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10s-->" onchange="maketotals();"></td>
+<td align=center><input name="10m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10m-->" onchange="maketotals();"></td>
+<td align=center><input name="10l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10l-->" onchange="maketotals();"></td>
+<td align=center><input name="10xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10xl-->" onchange="maketotals();"></td>
+<td align=center><input name="10xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_10xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="10xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_10xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="10xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_10xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="10misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_10misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="11quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_11quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="11style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_11style-->" onchange="maketotals();"></td>
+<td align=center><input name="11color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_11color-->" onchange="maketotals();"></td>
+<td align=center><input name="11vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_11vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="11vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="11vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11vs-->" onchange="maketotals();"></td>
+<td align=center><input name="11vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11vm-->" onchange="maketotals();"></td>
+<td align=center><input name="11vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11vl-->" onchange="maketotals();"></td>
+<td align=center><input name="11vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="11s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11s-->" onchange="maketotals();"></td>
+<td align=center><input name="11m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11m-->" onchange="maketotals();"></td>
+<td align=center><input name="11l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11l-->" onchange="maketotals();"></td>
+<td align=center><input name="11xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11xl-->" onchange="maketotals();"></td>
+<td align=center><input name="11xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_11xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="11xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_11xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="11xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_11xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="11misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_11misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="12quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_12quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="12style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_12style-->" onchange="maketotals();"></td>
+<td align=center><input name="12color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_12color-->" onchange="maketotals();"></td>
+<td align=center><input name="12vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_12vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="12vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="12vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12vs-->" onchange="maketotals();"></td>
+<td align=center><input name="12vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12vm-->" onchange="maketotals();"></td>
+<td align=center><input name="12vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12vl-->" onchange="maketotals();"></td>
+<td align=center><input name="12vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="12s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12s-->" onchange="maketotals();"></td>
+<td align=center><input name="12m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12m-->" onchange="maketotals();"></td>
+<td align=center><input name="12l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12l-->" onchange="maketotals();"></td>
+<td align=center><input name="12xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12xl-->" onchange="maketotals();"></td>
+<td align=center><input name="12xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_12xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="12xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_12xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="12xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_12xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="12misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_12misc-->" onchange="maketotals();"></td>
+
+</tr><tr>
+
+<td align=center><input name="13quantity" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_13quantity-->" onchange="maketotals();"></td>
+<td align=center><input name="13style" size=3 style="width: 150; text-align:center;" value="<!--DATA-form_13style-->" onchange="maketotals();"></td>
+<td align=center><input name="13color" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_13color-->" onchange="maketotals();"></td>
+<td align=center><input name="13vendor" size=3 style="width: 55; text-align:center;" value="<!--DATA-form_13vendor-->" onchange="maketotals();"></td>
+<td align=center><input name="13vxs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13vxs-->" onchange="maketotals();"></td>
+<td align=center><input name="13vs" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13vs-->" onchange="maketotals();"></td>
+<td align=center><input name="13vm" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13vm-->" onchange="maketotals();"></td>
+<td align=center><input name="13vl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13vl-->" onchange="maketotals();"></td>
+<td align=center><input name="13vxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13vxl-->" onchange="maketotals();"></td>
+<td align=center><input name="13s" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13s-->" onchange="maketotals();"></td>
+<td align=center><input name="13m" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13m-->" onchange="maketotals();"></td>
+<td align=center><input name="13l" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13l-->" onchange="maketotals();"></td>
+<td align=center><input name="13xl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13xl-->" onchange="maketotals();"></td>
+<td align=center><input name="13xxl" size=3 style="width: 30; text-align:center;" value="<!--DATA-form_13xxl-->" onchange="maketotals();"></td>
+<td align=center><input name="13xxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_13xxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="13xxxxl" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_13xxxxl-->" onchange="maketotals();"></td>
+<td align=center><input name="13misc" size=3 style="width: 40; text-align:center;" value="<!--DATA-form_13misc-->" onchange="maketotals();"></td>
+
+</tr></table></td>
+
+<td align=right valign=top>
+<table border=0 cellpadding=1 cellspacing=0>
+<tr>
+<td align=center><font style="width: 50; text-align: center; font-family: Arial; font-size: 12;">Price</font></td>
+<td align=center><font style="width: 50; text-align: center; font-family: Arial; font-size: 12;">Total</font></td>
+</tr><tr>
+<td align=center><input name="1price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_1price-->" onchange="maketotals();"></td>
+<td align=right><input name="1total" id="1total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_1total-->"></td>
+</tr><tr>
+<td align=center><input name="2price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_2price-->" onchange="maketotals();"></td>
+<td align=right><input name="2total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_2total-->" ></td>
+</tr><tr>
+<td align=center><input name="3price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_3price-->" onchange="maketotals();"></td>
+<td align=right><input name="3total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_3total-->"></td>
+</tr><tr>
+<td align=center><input name="4price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_4price-->" onchange="maketotals();"></td>
+<td align=right><input name="4total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_4total-->" ></td>
+</tr><tr>
+<td align=center><input name="5price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_5price-->" onchange="maketotals();"></td>
+<td align=right><input name="5total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_5total-->"></td>
+</tr><tr>
+<td align=center><input name="6price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_6price-->" onchange="maketotals();"></td>
+<td align=right><input name="6total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_6total-->"></td>
+</tr><tr>
+<td align=center><input name="7price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_7price-->" onchange="maketotals();"></td>
+<td align=right><input name="7total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_7total-->"></td>
+</tr><tr>
+<td align=center><input name="8price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_8price-->" onchange="maketotals();"></td>
+<td align=right><input name="8total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_8total-->"></td>
+</tr><tr>
+<td align=center><input name="9price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_9price-->" onchange="maketotals();"></td>
+<td align=right><input name="9total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_9total-->" ></td>
+</tr><tr>
+<td align=center><input name="10price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_10price-->" onchange="maketotals();"></td>
+<td align=right><input name="10total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_10total-->"></td>
+</tr><tr>
+<td align=center><input name="11price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_11price-->" onchange="maketotals();"></td>
+<td align=right><input name="11total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_11total-->"></td>
+</tr><tr>
+<td align=center><input name="12price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_12price-->" onchange="maketotals();"></td>
+<td align=right><input name="12total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_12total-->"></td>
+</tr><tr>
+<td align=center><input name="13price" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_13price-->" onchange="maketotals();"></td>
+<td align=right><input name="13total" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_13total-->"></td>
+</tr></table>
+</td></tr>
+
+<tr><td align=left valign=top><font style="font-family: Arial; font-size: 12;">
+<table border=0 cellpadding=1 cellspacing=0>
+<tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;">Front</font></td>
+<td align=left colspan=2 valign=bottom><font style="font-family: Arial; font-size: 12;"><select name="front" style="width: 100px;">
+	<option <!--DATA-form_front_Left-Chest_select-->>Left Chest</option>
+	<option <!--DATA-form_front_Right-Chest_select-->>Right Chest</option>
+	<option <!--DATA-form_front_Center-Chest_select-->>Center Chest</option>
+	<option <!--DATA-form_front_Full-Chest_select-->>Full Chest</option></select></font></td>
+<td align=left colspan=5 valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="fronttext" size=3 style="width: 240; text-align: left;" value="<!--DATA-form_fronttext-->"></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;">Back</font></td>
+<td align=left valign=bottom colspan=2><font style="font-family: Arial; font-size: 12;"><select name="back" style="width: 100px;">
+	<option <!--DATA-form_back_Full-Back_select-->>Full Back</option>
+	<option <!--DATA-form_back_Small-Back_select-->>Small Back</option>
+	<option <!--DATA-form_back_Tag_select-->>Tag</option></select></font></td>
+<td align=left valign=bottom colspan=5><font style="font-family: Arial; font-size: 12;"><input name="backtext" size=3 style="width: 240; text-align: left;" value="<!--DATA-form_backtext-->"></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;">Sleeve</font></td>
+<td align=left valign=bottom colspan=2><font style="font-family: Arial; font-size: 12;"><select name="sleeve" style="width: 100px;">
+	<option <!--DATA-form_sleeve_Left_select-->>Left</option>
+	<option <!--DATA-form_sleeve_Right_select-->>Right</option>
+	<option <!--DATA-form_sleeve_Both_select-->>Both</option></select></font></td>
+<td align=left valign=bottom colspan=5><font style="font-family: Arial; font-size: 12;"><input name="sleevetext" size=3 style="width: 240; text-align: left;" value="<!--DATA-form_sleevetext-->"></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;">Other</font></td>
+<td align=left valign=bottom colspan=2><font style="font-family: Arial; font-size: 12;"><input name="othertext1" size=3 style="width: 100; text-align: left;" value="<!--DATA-form_othertext1-->"></font></td>
+<td align=left valign=bottom colspan=5><font style="font-family: Arial; font-size: 12;"><input name="othertext2" size=3 style="width: 240; text-align: left;" value="<!--DATA-form_othertext2-->"></td>
+
+</tr><tr>
+
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;">Art Work</font></td>
+<td align=left colspan=2 valign=bottom><font style="font-family: Arial; font-size: 12;"><select name="artwork" style="width: 100px;">
+	<option <!--DATA-form_artwork_New_select-->>New</option>
+	<option <!--DATA-form_artwork_Repeat_select-->>Repeat</option>
+	<option <!--DATA-form_artwork_Revision_select-->>Revision</option></select></font></td>
+<td align=left colspan=5 valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="artistradio" type=checkbox value="artistradio" class=borderless <!--DATA-form_artistradio_artistradio_radio-->> Artist &nbsp; &nbsp;<!--DATA-form_artistname--></td>
+
+</tr><tr>
+
+<td align=center colspan=8 valign=bottom><font style="font-family: Arial; font-size: 12;"><img src="" height=2 width=0><br><textarea name="artinstructions" onClick="this.select();" style="width: 450; height: 70; text-align: left; font-family: Arial; font-size: 12;"><!--DATA-form_artinstructions--></textarea></font></td>
+
+</tr><tr>
+
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">In<br>progress</font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Complete</font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Sent to<br>approve</font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Revisions</font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Approved</font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Seps<br>Done</font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Proof<br>Film</font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Hours</font></td>
+
+</tr><tr>
+
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialsinprogress" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialsinprogress-->"></font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialscomplete" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialscomplete-->"></font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialssenttoapprove" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialssenttoapprove-->"></font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialsrevisions" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialsrevisions-->"></font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialsapproved" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialsapproved-->"></font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialssepsdone" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialssepsdone-->"></font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialsprooffilm" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialsprooffilm-->"></font></td>
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;"><input name="initialshours" size=3 style="width: 50; text-align:center;" value="<!--DATA-form_initialshours-->"></font></td>
+
+</tr><tr>
+
+<td align=center><font style="text-align: center; font-family: Arial; font-size: 12;">Comments:</font></td>
+<td align=left colspan=7><font style="font-family: Arial; font-size: 12;"><textarea name="comments" onClick="this.select();" style="width: 400; height: 40; text-align: left; font-family: Arial; font-size: 12;"><!--DATA-form_comments--></textarea></font></td>
+
+</tr></table></td>
+<td align=center valign=top>
+<font style="font-family: Arial; font-size: 12;"><br><textarea name="redalert" onClick="this.select();" style="width: 250; height: 40; text-align: left; font-family: Arial; font-size: 12;"><!--DATA-form_redalert--></textarea>
+
+<p><table border=0 cellspacing=0 cellpadding=1><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stageOrderGoods" value="Order goods" type=checkbox class=borderless <!--DATA-form_stageOrderGoods_Order-goods_radio-->> Order Goods</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext1" value="<!--DATA-form_stagetext1-->"></font></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stageGoodsReceived" value="Goods Received" type=checkbox class=borderless <!--DATA-form_stageGoodsReceived_Goods-Received_radio-->> Goods Received</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext2" value="<!--DATA-form_stagetext2-->"></font></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stageArtApproval" value="Art Approval" type=checkbox class=borderless <!--DATA-form_stageArtApproval_Art-Approval_radio-->> Art Approval</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext3" value="<!--DATA-form_stagetext3-->"></font></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stageOrderStaging" value="Order Staging" type=checkbox class=borderless <!--DATA-form_stageOrderStaging_Order-Staging_radio-->> Order Staging</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext4" value="<!--DATA-form_stagetext4-->"></font></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stagePrintingStitching" value="Printing/Stitching" type=checkbox class=borderless <!--DATA-form_stagePrintingStitching_Printing-Stitching_radio-->>&nbsp;Printing/Stitching</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext5" value="<!--DATA-form_stagetext5-->"></font></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stageComplete" value="Complete" type=checkbox class=borderless <!--DATA-form_stageComplete_Complete_radio-->> Complete</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext6" value="<!--DATA-form_stagetext6-->"></font></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stageBilled" value="Billed" type=checkbox class=borderless <!--DATA-form_stageBilled_Billed_radio-->> Billed</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext7" value="<!--DATA-form_stagetext7-->"></font></td>
+
+</tr><tr>
+
+<td align=left valign=bottom><font style="font-family: Arial; font-size: 12;"><input name="stagePaid" value="Paid" type=checkbox class=borderless <!--DATA-form_stagePaid_Paid_radio-->> Paid</font></td>
+<td align=left><font style="font-family: Arial; font-size: 12;"><input size=3 style="text-align: left;" name="stagetext8" value="<!--DATA-form_stagetext8-->"></font></td>
+
+</tr></table></td>
+<td align=right valign=top>
+
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+<td align=right valign=middle><font style="font-family: Arial; font-size: 12;">Sub-total</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="subtotal" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_subtotal-->"></font></td>
+
+</tr><tr>
+
+<td align=right valign=top><font style="font-family: Arial; font-size: 12;"><input name="salestaxradio" value="salestaxradio" type=checkbox class=borderless <!--DATA-form_salestaxradio_salestaxradio_radio--> onclick="maketotals();">&nbsp;Sales Tax</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="salestax" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_salestax-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Screen Charge</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="screencharge" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_screencharge-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Die Charge</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="diecharge" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_diecharge-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Art Charge</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="artcharge" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_artcharge-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Color Charge</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="colorcharge" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_colorcharge-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Shipping</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="shipping" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_shipping-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;"><!--DATA-form_field1--></font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="field2" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_field2-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Total</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="total" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_total-->"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Deposit</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="deposit" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_deposit-->" onchange="maketotals();"></font></td>
+
+</tr><tr>
+
+<td align=right><font style="font-family: Arial; font-size: 12;">Balance</font></td>
+<td align=right><font style="font-family: Arial; font-size: 12;"><input name="balance" size=3 style="width: 50; text-align:right;" value="<!--DATA-form_balance-->"></font></td>
+
+</tr><tr><td colspan=2 align=right valign=bottom>
+<form action="<!--DATA-formurl-->" method=post><br><br>
+<input type=hidden value="<!--DATA-enterpass1-->" name='pass1'>
+<input type=hidden value="<!--DATA-enterpass2-->" name='pass2'>
+<input type=submit name='neworder' value='Return to OMS'>
+</td>
+</tr></table>
+</td></tr></table></td></tr></table>
+</form>
+</body>
+</html>

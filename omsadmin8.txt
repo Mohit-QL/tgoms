@@ -1,0 +1,28 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body>
+<!--DATA-header-->
+<form action="<!--DATA-formurl-->" method=post>
+<input type=hidden value="<!--DATA-enterpass1-->" name="pass1">
+<input type=hidden value="<!--DATA-enterpass2-->" name="pass2">
+<input type=hidden value="12" name="controlpanel">
+
+<font style="font-family: Arial; font-size: 12"><u>Change Password for user <!--DATA-enterpass1--></u>
+<p><!--DATA-error--><p>
+
+<table border=0 cellspacing=0 cellpadding=2><tr>
+  <td align=left><font class="normaltext">New Password:</td>
+  <td align=left><input type=password size=20 name="newpassword" class="inputbox"></td>
+  </tr><tr>
+  <td align=left><font class="normaltext">Retype New Password:</td>
+  <td align=left><input type=password size=20 name="newpassword2" class="inputbox"></td>
+  </tr>
+</table>
+<p>
+<input type=submit name="changepassword" value="Change Password">
+</form>
+</body>
+</html>

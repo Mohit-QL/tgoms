@@ -1,0 +1,109 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+<script language='Javascript'>
+function printitall ()
+{
+  var OpenWindow = window.open("", "newwin", "height=200, width=300,toolbar=no,scrollbars=no,menubar=no,resizable=no,location=no,directories=no");
+  OpenWindow.document.write("<html><head><title>Multiple Print</title></head><frameset rows=\"*, 100%\">");
+  OpenWindow.document.write("<frame src='' name='12345678' id='12345678'>");
+  OpenWindow.document.write("<frame src='<!--DATA-omsbasicdir-->multipleprint.html'>");
+  OpenWindow.document.write("</frameset></html>");
+  OpenWindow.document.close();
+}
+</script>
+</head>
+
+<body><font face=arial size=1>
+
+<!--DATA-header-->
+
+<form action='<!--DATA-formurl-->' method=post>
+<input type=hidden name="sortorders" value="123456">
+<input type=hidden name="filter" value="category">
+<input type=hidden value="<!--DATA-enterpass1-->" name='pass1'>
+<input type=hidden value="<!--DATA-enterpass2-->" name='pass2'>
+<input type=hidden value="<!--DATA-archived-->" name='archived'>
+
+<table border=0 cellspacing=0 cellpadding=2><tr>
+<td align=left valign=middle><font class="normaltext">Narrow results by Category:</font></td>
+<td align=left valign=middle><input type=hidden name="filter2" value="type"><select name="filterstring" style="width: 200px; text-align: right;">
+  <option value="">All Categories</option>
+  <option value="Screen Print" <!--DATA-form_filterstring_ScreenPrint_select-->>Screen Print</option>
+  <option value="Logo Magnet" <!--DATA-form_filterstring_LogoMagnet_select-->>Logo Magnet</option>
+  <option value="Logo Ventures" <!--DATA-form_filterstring_LogoVentures_select-->>Logo Ventures</option>
+  <option value="CMD" <!--DATA-form_filterstring_CMD_select-->>CMD</option>
+  <option value="Promotional" <!--DATA-form_filterstring_Promotional_select-->>Promotional</option>
+  <option value="Embroidery" <!--DATA-form_filterstring_Embroidery_select-->>Embroidery</option>
+  <option value="Other" <!--DATA-form_filterstring_Other_select-->>Other</option>
+</select></td>
+
+</tr><tr>
+
+<td align=left valign=middle><font class="normaltext">Narrow results by type:</font></td>
+<td align=left valign=middle><select name="filterstring2" style="width: 200px; text-align: right;">
+  <option value="">All Types</option>
+  <option value="Order"<!--DATA-form_filterstring2_Order_select-->>Order</option>
+  <option value="Inquiry/Quote"<!--DATA-form_filterstring2_InquiryQuote_select-->>Inquiry/Quote</option>
+  <option value="Mock-up"<!--DATA-form_filterstring2_Mockup_select-->>Mock-up</option>
+  <option value="Mock-up (Complete)"<!--DATA-form_filterstring2_MockupComplete_select-->>Mock-up (Complete)</option>
+  <option value="Project"<!--DATA-form_filterstring2_Project_select-->>Project</option>
+  <option value="Other"<!--DATA-form_filterstring2_Other_select-->>Other</option>
+</select></td>
+
+</tr><tr>
+
+<td align=left valign=middle><font class="normaltext">Sort by:</font></td>
+<td align=left valign=middle><select name="reversesort" style="width: 200px; text-align: right;">
+  <option value="duedate" <!--DATA-form_reversesort_duedate_select-->>Order Due Date</option>
+  <option value="scheduledtoprint" <!--DATA-form_reversesort_scheduledtoprint_select-->>Scheduled to Print Date</option>
+  <option value="artdue" <!--DATA-form_reversesort_artdue_select-->>Art Due Date</option>
+  <option value="orderdue" <!--DATA-form_reversesort_orderdue_select-->>Order Date</option>
+</select></td>
+
+</tr><tr>
+<td>&nbsp;</td>
+<td align=left valign=middle><input type=submit value="Resort Results"></td>
+</tr></table>
+</form>
+
+<p align=center>
+<!--noresultsstart-->
+
+<table border=1 width=95% cellpadding=2 cellspacing=1>
+<tr><td align=center rowspan=2><font face=arial size=1>Client Name</td>
+    <td align=center rowspan=2><font face=arial size=1>Project Name</td>
+    <td align=center rowspan=2><font face=arial size=1>Category</td>
+    <td align=center rowspan=2><font face=arial size=1>Type</td>
+    <td align=center rowspan=2><font face=arial size=1><!--DATA-datetitle--></td>
+    <td align=center colspan=8><font face=arial size=1>Stages Completed</td>
+    <td align=center rowspan=2><font face=arial size=1>Link to art sample</td>
+    <td align=center rowspan=2><font face=arial size=1>Options</td>
+</tr>
+<tr>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Order<br>Goods</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Goods<br>Received</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Art<br>Approval</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Order<br>Staging</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Printing/<br>Stitching</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Complete</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Billed</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Paid</td>
+</tr>
+<!--DATA-orderlist-->
+</table>
+<form action='<!--DATA-formurl-->' method=post target='12345678' onsubmit="printitall();">
+<input type=hidden name="sortorders" value="123456">
+<input type=hidden value="<!--DATA-enterpass1-->" name='pass1'>
+<input type=hidden value="<!--DATA-enterpass2-->" name='pass2'>
+<input type=hidden name="filter" value="<!--DATA-filter-->">
+<input type=hidden name="filterstring" value="<!--DATA-filtervalue-->">
+<input type=hidden name="filter2" value="<!--DATA-filter2-->">
+<input type=hidden name="filterstring2" value="<!--DATA-filtervalue2-->">
+<input type=hidden name="reversesort" value="<!--DATA-reversesort-->">
+<p align=center>
+<input type=submit name="printmultiple" value="Print all of these Forms">
+</form>
+<!--noresultsend-->
+</body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body><table height=100% width=100% border=0><tr><td align=center valign=middle>
+
+<img src="<!--DATA-omsbasicdir-->oms.gif"><br><font class="normaltext"><br>
+Sorry OMS is temporarily offline.<br>
+This is to facilitate an update.<br>
+Please check back shortly.
+
+</td></tr></table></body>
+</html>

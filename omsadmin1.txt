@@ -1,0 +1,12 @@
+<table height=100% width=100% border=0><tr><td align=center valign=middle>
+<img src=<!--DATA-omsbasicdir-->oms.gif>
+<p>
+<!--DATA-error--><form action="<!--DATA-formurl-->" method=post>
+<table border=0><tr><td align=left><font face=arial size=2>Username</td>
+  <td align=right><input name="pass1" value="<!--DATA-enterpass1-->" size=20><font face=arial size=2></td></tr>
+  <tr><td align=left><font face=arial size=2>Password</td>
+  <td align=right><input name="pass2" value="<!--DATA-enterpass2-->" size=20 type=password><font face=arial size=2></td></tr>
+</table>
+<p><input type=submit name='justloggedin' value="Log In" style="font-family: Arial;text-decoration: none;background-color: #FFFFFF;border: 1px solid;" />
+</form>
+</td></tr></table>

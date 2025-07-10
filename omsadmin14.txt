@@ -1,0 +1,28 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body><table height=100% width=100% border=0><tr><td align=center valign=middle>
+
+<img src="<!--DATA-omsbasicdir-->oms.gif"><br><font class="normaltext"><br>
+
+<form action="<!--DATA-formurl-->" method=post>
+<input type=hidden value="<!--DATA-enterpass1-->" name="pass1">
+<input type=hidden value="<!--DATA-enterpass2-->" name="pass2">
+<input type=hidden value="12" name="controlpanel">
+<input type=hidden value="12" name="addeditdelete">
+<input type=hidden name="searchbytype" value="<!--DATA-searchbytype-->">
+<input type=hidden name="olduserartist" value="<!--DATA-olduserartist-->">
+<input type=hidden name="olduserrep" value="<!--DATA-olduserrep-->">
+<input type=hidden name="oldusercrew" value="<!--DATA-oldusercrew-->">
+<input type=hidden name="olduseradmin" value="<!--DATA-olduseradmin-->">
+
+Are you sure you want to permanently delete this user?<br>
+This action can't be reversed.<p>
+<input type=submit name="delete" value="Permanently Delete Account">
+<p>
+<input type=submit value="Return to Control Panel">
+</form>
+</td></tr></table></body>
+</html>

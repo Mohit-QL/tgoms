@@ -1,0 +1,99 @@
+/* CSS Document */
+
+body
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	line-height: 20px;
+}
+
+label
+{
+
+}
+
+div.initialDiv
+{
+	font-size:9px;
+	text-align:center;
+	width:70px;
+	float:left;
+}
+
+fieldset
+{
+	-moz-border-radius: 7pt;
+	text-align:right;
+}
+
+input.initialButton
+{
+	height: 18px;
+	margin:2px 0px 2px 8px;	
+	width:35px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	text-align: center
+}
+
+
+
+input.text
+{
+	margin:2px 0px;
+	padding:1px;
+	height:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+input.tabletextprint
+{
+	margin:2px 2px;
+	padding:1px;
+	height:16px;
+	text-align:center;
+}
+
+input.tabletotaltext
+{
+	margin:2px 2px;
+	padding:1px;
+	height:16px;
+	text-align:right;
+}
+
+input.tabletotaltext2
+{
+	margin:2px 2px;
+	padding:1px;
+	height:16px;
+	text-align:right;
+}
+
+
+textarea
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+select
+{
+	border:1px solid #000000;
+	position:relative;
+	margin:2px;
+}
+
+.topNaviButton
+{
+	width:115px; 
+	height:24px;
+	margin:2px 2px;
+	padding:2px 2px;
+}
+
+a img
+{
+	border:0;
+}

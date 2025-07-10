@@ -1,0 +1,39 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body>
+<!--DATA-header-->
+<form action="<!--DATA-formurl-->" method=post>
+<input type=hidden value="<!--DATA-enterpass1-->" name="pass1">
+<input type=hidden value="<!--DATA-enterpass2-->" name="pass2">
+<input type=hidden value="12" name="controlpanel">
+<input type=hidden value="12" name="addeditdelete">
+<input type=hidden value="<!--DATA-edituser-->" name="edituser">
+
+<font style="font-family: Arial; font-size: 12;">Edit Account of <!--DATA-edituser--></u>
+<p><!--DATA-error--><p>
+
+<table border=0 cellspacing=0 cellpadding=2><tr>
+  <td align=left><font class="normaltext">Username:</td>
+  <td align=left><font class="normaltext"><input sixe=20 name="newusername" value="<!--DATA-edituser-->" class="inputbox"></td>
+  </tr><tr>
+  <td align=left valign=top><font class="normaltext">User Type:</td>
+  <td align=left valign=top><font class="normaltext">
+  <input type=checkbox name="newuserartist" <!--DATA-artistchecked--> value="true" style="background: #ffffff; border: 0px;"> Artist<br>
+  <input type=checkbox name="newuserrep" <!--DATA-repchecked--> value="true" style="background: #ffffff; border: 0px;"> Rep<br>
+  <input type=checkbox name="newusercrew" <!--DATA-crewchecked--> value="true" style="background: #ffffff; border: 0px;"> Crew<br>
+  <input type=checkbox name="newuseradmin" <!--DATA-adminchecked--> value="true" style="background: #ffffff; border: 0px;"> Admin</td>
+  </tr><tr>
+  <td align=left valign=top><font class="normaltext">User Initials:</td>
+  <td align=left><font class="normaltext">  <input name="newuserinitials" size=4 value="<!--DATA-olduserinitials-->" class="inputbox"><br><br>
+  <input type=checkbox name="resetpassword" style="background: #ffffff; border: 0px;"> <font style="font-family: Arial; font-size: 10px;">Reset Password (to "password")</td>
+  </tr>
+</table>
+
+<p>
+<input type=submit name="edit" value="Save Changes">
+</form>
+</body>
+</html>

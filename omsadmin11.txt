@@ -1,0 +1,18 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body><table height=100% width=100% border=0><tr><td align=center valign=middle>
+
+<img src="<!--DATA-omsbasicdir-->oms.gif"><br><font class="normaltext"><br>
+
+<form action="<!--DATA-formurl-->" method=post>
+<input type=hidden value="<!--DATA-enterpass1-->" name="pass1">
+<input type=hidden value="<!--DATA-enterpass2-->" name="pass2">
+Order Permanently Deleted.<p>
+<input type=submit value="Return to a New Order Form">
+
+</form>
+</td></tr></table></body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body><font style="font-family: Arial; font-size: 12px;">
+
+<!--DATA-header-->
+
+<form action='<!--DATA-formurl-->' method=post>
+<input type=hidden name="artboard" value="123456">
+<input type=hidden name="filter" value="category">
+<input type=hidden value="<!--DATA-enterpass1-->" name='pass1'>
+<input type=hidden value="<!--DATA-enterpass2-->" name='pass2'>
+
+This is the 
+<!--ONLY-artcompleted-art completed-->
+artboard for <!--DATA-artboarduser-->.
+<p>
+
+<table border=0 cellspacing=0 cellpadding=2><tr>
+<td align=left valign=middle><font class="normaltext">Select a different artboard:</td>
+<td align=left valign=middle><select name="artboarduser" style="width: 200px; text-align: right;"><!--DATA-artistlist--></select></td>
+
+</tr><tr>
+
+<td align=left valign=middle><font class="normaltext">Sort by:</font></td>
+<td align=left valign=middle><select name="reversesort" style="width: 200px; text-align: right;">
+  <option value="duedate" <!--DATA-form_reversesort_duedate_select-->>Order Due Date</option>
+  <option value="scheduledtoprint" <!--DATA-form_reversesort_scheduledtoprint_select-->>Scheduled to Print Date</option>
+  <option value="artdue" <!--DATA-form_reversesort_artdue_select-->>Art Due Date</option>
+  <option value="orderdue" <!--DATA-form_reversesort_orderdue_select-->>Order Date</option>
+</select></td>
+
+</tr><tr>
+
+<td align=left valign=middle><font class="normaltext">Artwork Status:</font></td>
+<td align=left valign=middle><select name="artcompleted" style="width: 200px; text-align: right;">
+  <option value="">In Progress</option>
+  <option value="123456" <!--DATA-form_artcompleted_123456_select-->>Completed</option>
+</select></td>
+
+</tr><tr>
+
+<td align=left valign=middle><font class="normaltext">Order Status:</font></td>
+<td align=left valign=middle><select name="archived" style="width: 200px; text-align: right;">
+  <option value=''>Active Orders</option>
+  <option value="billed:paid:completed" <!--DATA-form_archived_billedpaidcompleted_select-->>Archived Orders</option>
+  <option value="order:billed:paid:completed" <!--DATA-form_archived_orderbilledpaidcompleted_select-->>All Orders</option>
+  <option value="billed" <!--DATA-form_archived_billed_select-->>Billed Orders</option>
+  <option value="paid" <!--DATA-form_archived_paid_select-->>Paid Orders</option>
+  <option value="completed" <!--DATA-form_archived_completed_select-->>Completed Orders</option></select>
+</td>
+
+</tr></table>
+<p align=left>
+<input type=submit value="Display">
+</form>
+
+<p align=center>
+<!--noresultsstart-->
+
+<table border=1 width=95% cellpadding=2 cellspacing=1>
+<tr><td align=center rowspan=2><font face=arial size=1>Client Name</td>
+    <td align=center rowspan=2><font face=arial size=1>Project Name</td>
+    <td align=center rowspan=2><font face=arial size=1>Category</td>
+    <td align=center rowspan=2><font face=arial size=1>Type</td>
+    <td align=center rowspan=2><font face=arial size=1><!--DATA-datetitle--></td>
+    <td align=center colspan=6><font face=arial size=1>Art Stages Initialed</td>
+    <td align=center rowspan=2><font face=arial size=1>Link to art sample</td>
+    <td align=center rowspan=2><font face=arial size=1>Options</td>
+</tr>
+<tr>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">In<br>Progress</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Complete</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Sent&nbsp;to<br>Approve</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Revisions</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Approved</td>
+    <td align=center cellpadding=0 width=30><font face=arial size=1 style="font-family: Arial; font-size: 7;">Seps Done</td>
+</tr>
+<!--DATA-orderlist-->
+</table>
+<!--noresultsend-->
+</body>
+</html>

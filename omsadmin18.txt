@@ -1,0 +1,65 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+<script language='Javascript'>
+<!--DATA-clientjavascript-->
+function changebilldisplay ()
+{
+  document.forms['mainform'].elements['billtoclient'].value = clientclient[document.forms['mainform'].elements['changeclient'].value];
+  document.forms['mainform'].elements['billtocontact'].value = clientcontact[document.forms['mainform'].elements['changeclient'].value];
+  document.forms['mainform'].elements['billtoaddress'].value = clientaddress[document.forms['mainform'].elements['changeclient'].value];
+  document.forms['mainform'].elements['billtocity'].value = clientcity[document.forms['mainform'].elements['changeclient'].value];
+  document.forms['mainform'].elements['billtostate'].value = clientstate[document.forms['mainform'].elements['changeclient'].value];
+  document.forms['mainform'].elements['billtozip'].value = clientzip[document.forms['mainform'].elements['changeclient'].value];
+  document.forms['mainform'].elements['billtophone'].value = clientphone[document.forms['mainform'].elements['changeclient'].value];
+  document.forms['mainform'].elements['billtoemail'].value = clientemail[document.forms['mainform'].elements['changeclient'].value];
+}
+</script>
+</head>
+
+<body onload='changebilldisplay();'>
+<!--DATA-header-->
+<form action="<!--DATA-formurl-->" method=post name='mainform'>
+<input type=hidden value="<!--DATA-enterpass1-->" name="pass1">
+<input type=hidden value="<!--DATA-enterpass2-->" name="pass2">
+<input type=hidden value="12" name="controlpanel">
+
+<font style="font-family: Arial; font-size: 12"><u>Delete Saved Client Information</u>
+<p><!--DATA-error--><p>
+
+<table border=0 cellspacing=0 cellpadding=2><tr>
+  <td align=left><font class="normaltext">Select a client:&nbsp;&nbsp;&nbsp;</td>
+  <td align=left><select name='changeclient' onchange='changebilldisplay();' style="width: 230px;"><!--DATA-clientlist--></select></td>
+  </tr><tr>
+  <td colspan=2>&nbsp;</td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">Client:</td>
+  <td align=left><input size=50 class="inputbox" name='billtoclient'></td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">Contact:</td>
+  <td align=left><input size=50 class="inputbox" name='billtocontact'></td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">Address:</td>
+  <td align=left><input size=50 class="inputbox" name='billtoaddress'></td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">City:</td>
+  <td align=left><input size=50 class="inputbox" name='billtocity'></td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">State:</td>
+  <td align=left><input size=50 class="inputbox" name='billtostate'></td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">Zip:</td>
+  <td align=left><input size=50 class="inputbox" name='billtozip'></td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">Phone or Fax:</td>
+  <td align=left><input size=50 class="inputbox" name='billtophone'></td>
+  </tr><tr>
+  <td align=left><font style="font-family: Arial; font-size: 10;">E-mail:</td>
+  <td align=left><input size=50 class="inputbox" name='billtoemail'></td>
+  </tr>
+</table>
+<p>
+<input type=submit name="clientdata" value="Delete Selected Client">
+</form>
+</body>
+</html>

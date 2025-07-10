@@ -1,0 +1,65 @@
+<html>
+<head>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="<!--DATA-omsbasicdir-->style.css">
+</head>
+
+<body>
+<!--DATA-header-->
+
+<form action="<!--DATA-formurl-->" method=post name='mainform' id='mainform'>
+<input type=hidden value="<!--DATA-enterpass1-->" name="pass1">
+<input type=hidden value="<!--DATA-enterpass2-->" name="pass2">
+<input type=hidden value="12" name="controlpanel">
+<input type=hidden value="12" name="addeditdelete">
+
+<font class="normaltext"><u>Create, Delete and Modify Accounts</u>
+<p><!--DATA-error--><p>
+
+<u>Add User</u>
+<p>
+<table border=0 cellspacing=0 cellpadding=2><tr>
+  <td align=left><font class="normaltext">New User:</td>
+  <td align=left><input name="newuser" size=20 class="inputbox"></td>
+  </tr><tr>
+  <td align=left valign=top><font class="normaltext">User Type:</td>
+  <td align=left><font class="normaltext"><input type=checkbox name="newuserartist" style="background: #ffffff; border: 0px;"> Artist<br>
+  <input type=checkbox name="newuserrep" style="background: #ffffff; border: 0px;"> Rep<br>
+  <input type=checkbox name="newusercrew" style="background: #ffffff; border: 0px;"> Crew<br>
+  <input type=checkbox name="newuseradmin" style="background: #ffffff; border: 0px;"> Admin</td>
+  </tr><tr>
+  <td align=left><font class="normaltext">Initials:</td>
+  <td align=left><input name="newuserinitials" size=4 class="inputbox"></td>
+</tr></table>
+<p>
+<input type=submit name="add" value="Create New Account">
+
+<br><br><br>
+
+<u>Modify User</u>
+<p>
+
+<table border=0 cellspacing=0 cellpadding=2><tr>
+  <td align=left><input type=radio name="searchbytype" value="artist" checked style="background: #ffffff; border: 0px;"></td>
+  <td align=left><font class="normaltext">Artists:</font></td>
+  <td align=left><select name="olduserartist" style="width: 150; text-align: left;" onchange="document.forms['mainform'].elements['searchbytype'][0].checked = true;" onclick="document.forms['mainform'].elements['searchbytype'][0].checked = true;"><!--DATA-artistlist--></select></td>
+  </tr><tr>
+  <td align=left><input type=radio name="searchbytype" value="rep" style="background: #ffffff; border: 0px;"></td>
+  <td align=left><font class="normaltext">Rep:</font></td>
+  <td align=left><select name="olduserrep" style="width: 150; text-align: left;" onchange="document.forms['mainform'].elements['searchbytype'][1].checked = true;" onclick="document.forms['mainform'].elements['searchbytype'][1].checked = true;"><!--DATA-replist--></select></td>
+  </tr><tr>
+  <td align=left><input type=radio name="searchbytype" value="crew" style="background: #ffffff; border: 0px;"></td>
+  <td align=left><font class="normaltext">Crew:</font></td>
+  <td align=left><select name="oldusercrew" style="width: 150; text-align: left;" onchange="document.forms['mainform'].elements['searchbytype'][2].checked = true;" onclick="document.forms['mainform'].elements['searchbytype'][2].checked = true;"><!--DATA-crewlist--></select></td>
+  </tr><tr>
+  <td align=left><input type=radio name="searchbytype" value="admin" style="background: #ffffff; border: 0px;"></td>
+  <td align=left><font class="normaltext">Admin:</font></td>
+  <td align=left><select name="olduseradmin" style="width: 150; text-align: left;" onchange="document.forms['mainform'].elements['searchbytype'][3].checked = true;" onclick="document.forms['mainform'].elements['searchbytype'][3].checked = true;"><!--DATA-adminlist--></select></td>
+  </tr>
+</table>
+<p>
+<input type=submit name="edit" value="Edit Account">
+<p>
+<input type=submit name="deleteuser" value="Delete Account"></form>
+
+</body>
+</html>
