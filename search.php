@@ -65,6 +65,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 						<option value="projectName" <?php if (($_POST['filter'] ?? '') == "projectName") echo "selected=1" ?>>Project Name</option>
 						<option value="orderNumber" <?php if (($_POST['filter'] ?? '') == "orderNumber") echo "selected=1" ?>>Order Number</option>
 						<option value="missingValue" <?php if (($_POST['filter'] ?? '') == "missingValue") echo "selected=1" ?>>Missing Value</option>
+						<option value="keyword" <?php if (($_POST['filter'] ?? '') == "keyword") echo "selected=1" ?>>Keyword</option>
 					</select></label><br />
 
 				<label>Order Status: <select name="filter2" style="width:154px;">
@@ -74,9 +75,9 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 						<option value="stageComplete" <?php if (($_POST['filter2'] ?? '') == "stageComplete") echo "selected=1" ?>>Completed Orders</option>
 						<option value="stageBilled" <?php if (($_POST['filter2'] ?? '') == "stageBilled") echo "selected=1" ?>>Billed Orders</option>
 						<option value="stagePaid" <?php if (($_POST['filter2'] ?? '') == "stagePaid") echo "selected=1" ?>>Paid Orders</option>
-					</select></label><br />								
+					</select></label><br />
 
-					<!-- <label>Display Order:
+				<!-- <label>Display Order:
 					<select name="sort_order" style="width:154px;">
 						<option value="ASC" <?php if (($_POST['sort_order'] ?? '') == "ASC") echo "selected"; ?>>Ascending</option>
 						<option value="DESC" <?php if (($_POST['sort_order'] ?? '') == "DESC") echo "selected"; ?>>Descending</option>
@@ -195,7 +196,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 				if (!empty($_POST['filter'])) {
 
 					//$sortOrder = $_POST['sort_order'];
-					
+
 					switch ($_POST['filter']) {
 						case "name":
 							$selectOrderClientSql .= "AND clients.name LIKE '%" . mysqli_real_escape_string($conn, $_POST['searchString']) . "%' ";
@@ -225,6 +226,47 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 						case "missingValue":
 							$selectOrderClientSql .= "AND (orders.type = '' OR orders.category = '' OR orders.artDueDate IS NULL OR artDueDate = '0000-00-00' OR dueDate IS NULL OR dueDate = '0000-00-00') ";
 							//$orderBy = "orders.id $sortOrder";
+							break;
+
+						case "keyword":
+							$searchString = trim($_POST['searchString']);
+
+							if (is_numeric($searchString)) {
+								$orderID = (int)$searchString;
+								$selectOrderClientSql .= " AND orders.id = $orderID ";
+							} else {
+								$dateInput = false;
+
+								if (DateTime::createFromFormat('m/d/Y', $searchString) !== false) {
+									$dateInput = DateTime::createFromFormat('m/d/Y', $searchString);
+								} elseif (DateTime::createFromFormat('Y-m-d', $searchString) !== false) {
+									$dateInput = DateTime::createFromFormat('Y-m-d', $searchString);
+								}
+
+								if ($dateInput) {
+									$formattedDate = $dateInput->format('Y-m-d');
+									$selectOrderClientSql .= "
+																AND (
+																	DATE(orders.orderDate) = '$formattedDate' OR
+																	DATE(orders.artDueDate) = '$formattedDate' OR
+																	DATE(orders.printDate) = '$formattedDate' OR
+																	DATE(orders.dueDate) = '$formattedDate'
+																)
+															";
+								} else {
+									$searchStringEscaped = mysqli_real_escape_string($conn, $searchString);
+									$selectOrderClientSql .= "
+																AND (
+																	clients.name LIKE '%$searchStringEscaped%' OR
+																	clients.contact LIKE '%$searchStringEscaped%' OR
+																	clients.email LIKE '%$searchStringEscaped%' OR
+																	orders.projectName LIKE '%$searchStringEscaped%' OR
+																	orders.type LIKE '%$searchStringEscaped%' OR
+                    												orders.category LIKE '%$searchStringEscaped%'
+																)
+															";
+								}
+							}
 							break;
 					}
 				}
@@ -271,7 +313,7 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 
 				$selectOrderClientSql .= "ORDER BY dueDate ASC LIMIT " . $displayNumber . " , 100";
 				//$selectOrderClientSql .= "ORDER BY $orderBy LIMIT " . $displayNumber . " , 100";
-				
+
 
 				$selectOrderClientQuery = mysqli_query($conn,  $selectOrderClientSql) or die($selectOrderClientSql . '<br/><br/><br/>' . mysqli_error($conn));
 				$selectOrderClientRowSql = "SELECT FOUND_ROWS();";
