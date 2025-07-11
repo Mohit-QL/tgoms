@@ -232,44 +232,42 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 						case "keyword":
 							$searchString = trim($_POST['searchString']);
 
-							if (is_numeric($searchString)) {
-								$orderID = (int)$searchString;
-								$selectOrderClientSql .= " AND orders.id = $orderID ";
+							$dateInput = false;
+
+							if (DateTime::createFromFormat('m/d/Y', $searchString) !== false) {
+								$dateInput = DateTime::createFromFormat('m/d/Y', $searchString);
+							} elseif (DateTime::createFromFormat('Y-m-d', $searchString) !== false) {
+								$dateInput = DateTime::createFromFormat('Y-m-d', $searchString);
+							}
+
+							if ($dateInput) {
+								$formattedDate = $dateInput->format('Y-m-d');
+								$selectOrderClientSql .= "
+															AND (
+																DATE(orders.orderDate) = '$formattedDate' OR
+																DATE(orders.artDueDate) = '$formattedDate' OR
+																DATE(orders.printDate) = '$formattedDate' OR
+																DATE(orders.dueDate) = '$formattedDate'
+															)
+														";
 							} else {
-								$dateInput = false;
+								$searchStringEscaped = mysqli_real_escape_string($conn, $searchString);
+								$selectOrderClientSql .= "
+															AND (
+																clients.name LIKE '%$searchStringEscaped%' OR
+																clients.contact LIKE '%$searchStringEscaped%' OR
+																clients.email LIKE '%$searchStringEscaped%' OR
+																orders.projectName LIKE '%$searchStringEscaped%' OR
+																orders.type LIKE '%$searchStringEscaped%' OR
+																orders.category LIKE '%$searchStringEscaped%' OR
+																orders.poNo LIKE '%$searchStringEscaped%' OR
+																orders.id LIKE '%$searchStringEscaped%' 
 
-								if (DateTime::createFromFormat('m/d/Y', $searchString) !== false) {
-									$dateInput = DateTime::createFromFormat('m/d/Y', $searchString);
-								} elseif (DateTime::createFromFormat('Y-m-d', $searchString) !== false) {
-									$dateInput = DateTime::createFromFormat('Y-m-d', $searchString);
-								}
-
-								if ($dateInput) {
-									$formattedDate = $dateInput->format('Y-m-d');
-									$selectOrderClientSql .= "
-																AND (
-																	DATE(orders.orderDate) = '$formattedDate' OR
-																	DATE(orders.artDueDate) = '$formattedDate' OR
-																	DATE(orders.printDate) = '$formattedDate' OR
-																	DATE(orders.dueDate) = '$formattedDate'
-																)
-															";
-								} else {
-									$searchStringEscaped = mysqli_real_escape_string($conn, $searchString);
-									$selectOrderClientSql .= "
-																AND (
-																	clients.name LIKE '%$searchStringEscaped%' OR
-																	clients.contact LIKE '%$searchStringEscaped%' OR
-																	clients.email LIKE '%$searchStringEscaped%' OR
-																	orders.projectName LIKE '%$searchStringEscaped%' OR
-																	orders.type LIKE '%$searchStringEscaped%' OR
-                    												orders.category LIKE '%$searchStringEscaped%' OR
-                    												orders.poNo LIKE '%$searchStringEscaped%'
-																)
-															";
-								}
+															)
+														";
 							}
 							break;
+
 
 						case "purchaseNumber":
 							$selectOrderClientSql .= "AND orders.poNo LIKE '%" . mysqli_real_escape_string($conn, $_POST['searchString']) . "%' ";
