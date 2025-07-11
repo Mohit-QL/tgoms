@@ -716,11 +716,12 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 					?>
 				</select>
 			</fieldset>
-			<fieldset style="width:200px; position:absolute; top:325px; left:700px">
-				<legend>Purchase Number</legend>
-				<textarea name="poNo" rows="1" cols="22"><?php echo isset($poNo) ? htmlspecialchars($poNo) : ''; ?></textarea>
-			</fieldset>
 
+
+			<fieldset style="width:150px; position:absolute; top:325px; left:700px">
+				<legend>Purchase Order Number</legend>
+				<input type="text" class="text" name="poNo" value="<?php echo isset($poNo) ? htmlspecialchars($poNo) : ''; ?>" />
+			</fieldset>
 
 
 
