@@ -718,9 +718,9 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 			</fieldset>
 
 
-			<fieldset style="width:150px; position:absolute; top:325px; left:700px">
-				<legend>Purchase Order Number</legend>
-				<input type="text" class="text" name="poNo" value="<?php echo isset($poNo) ? htmlspecialchars($poNo) : ''; ?>" />
+			<fieldset style="width:108px; position:absolute; top:309px; left:830px">
+				<legend>Purchase Order No</legend>
+				<input type="text" class="text" name="poNo" style="width: 100px" value="<?php echo isset($poNo) ? htmlspecialchars($poNo) : ''; ?>" />
 			</fieldset>
 
 

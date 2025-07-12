@@ -633,39 +633,77 @@ if (isset($_POST['searchSubmit'])) {
 		<?php
 				} else if (isset($_POST['collateEmails'])) {
 					$colVal = $_POST['collateEmails'];
+					$keyword = isset($_POST['emailKeyword']) ? trim($_POST['emailKeyword']) : '';
+					$emails = array();
 		?>
-			<label>Narrow results by Category:
-				<select name="collateEmails" style="width: 200px;" onchange='this.form.submit()'>
-					<option value="All">All Categories</option>
-					<option value="Screen Print" <?php if ($colVal == "Screen Print") echo "selected=1" ?>>Screen Print</option>
-					<option value="Logo Magnet" <?php if ($colVal == "Logo Magnet") echo "selected=1" ?>>Logo Magnet</option>
-					<option value="LM-Dealer" <?php if ($colVal == "LM-Dealer") echo "selected=1" ?>>LM-Dealer</option>
-					<option value="C-S-Shirts" <?php if ($colVal == "C-S-Shirts") echo "selected=1" ?>>C-S-Shirts</option>
+			<form method="post" id="mainForm">
+				<label>Narrow results by Category:
+					<select name="collateEmails" style="width: 200px;" onchange='this.form.submit()'>
+						<option value="All" <?= ($colVal == "All") ? 'selected="selected"' : '' ?>>All Categories</option>
+						<option value="Screen Print" <?= ($colVal == "Screen Print") ? 'selected="selected"' : '' ?>>Screen Print</option>
+						<option value="Logo Magnet" <?= ($colVal == "Logo Magnet") ? 'selected="selected"' : '' ?>>Logo Magnet</option>
+						<option value="LM-Dealer" <?= ($colVal == "LM-Dealer") ? 'selected="selected"' : '' ?>>LM-Dealer</option>
+						<option value="C-S-Shirts" <?= ($colVal == "C-S-Shirts") ? 'selected="selected"' : '' ?>>C-S-Shirts</option>
+						<option value="CMD" <?= ($colVal == "CMD") ? 'selected="selected"' : '' ?>>CMD</option>
+						<option value="Promotional" <?= ($colVal == "Promotional") ? 'selected="selected"' : '' ?>>Promotional</option>
+						<option value="Embroidery" <?= ($colVal == "Embroidery") ? 'selected="selected"' : '' ?>>Embroidery</option>
+						<option value="Signs" <?= ($colVal == "Signs") ? 'selected="selected"' : '' ?>>Signs</option>
+						<option value="Other" <?= ($colVal == "Other") ? 'selected="selected"' : '' ?>>Other</option>
+					</select>
+				</label><br /><br />
 
-					<option value="CMD" <?php if ($colVal == "CMD") echo "selected=1" ?>>CMD</option>
-					<option value="Promotional" <?php if ($colVal == "Promotional") echo "selected=1" ?>>Promotional</option>
-					<option value="Embroidery" <?php if ($colVal == "Embroidery") echo "selected=1" ?>>Embroidery</option>
-					<option value="Signs" <?php if ($colVal == "Signs") echo "selected=1" ?>>Signs</option>
-					<option value="Other" <?php if ($colVal == "Other") echo "selected=1" ?>>Other</option>
-				</select></label><br /><br />
+				<label>Keyword:
+					<input type="text" name="emailKeyword" value="<?php echo htmlspecialchars($keyword); ?>" style="width: 200px;" />
+				</label>
+				<input type="submit" name="searchEmails" value="Search" />
+			</form>
+
+			<form action="download_emails.php" method="post" target="_blank" style="margin-top: 10px; position: absolute; right: 615px; top: 26px;">
+				<input type="submit" name="downloadEmails" value="Download List" style="width: 154px;">
+			</form>
+
+			<br /><br />
 			<?php
 
-					if ($colVal == "C-S-Shirts")
+					if ($colVal == "C-S-Shirts") {
 						$colVal = "Logo Ventures";
+					}
 
-					if ($colVal == 'All' || $colVal == "Collate Email Addresses")
-						$selectUserSql = "SELECT email FROM clients WHERE visible=1 GROUP BY email";
-					else
-						$selectUserSql = "SELECT c.email FROM clients AS c INNER JOIN orders AS o ON c.id=o.clientID WHERE c.visible=1 AND o.category='" . $colVal . "' GROUP BY c.email";
+					if ($colVal == 'All' || $colVal == "Collate Email Addresses") {
+						$selectUserSql = "SELECT email FROM clients WHERE visible=1";
+						if (!empty($keyword)) {
+							$escapedKeyword = mysqli_real_escape_string($conn, $keyword);
+							$selectUserSql .= " AND email LIKE '%$escapedKeyword%'";
+						}
+						$selectUserSql .= " GROUP BY email";
+					} else {
+						$escapedCategory = mysqli_real_escape_string($conn, $colVal);
+						$escapedKeyword = mysqli_real_escape_string($conn, $keyword);
+						$selectUserSql = "SELECT c.email FROM clients AS c 
+                        INNER JOIN orders AS o ON c.id = o.clientID 
+                        WHERE c.visible = 1 AND o.category = '$escapedCategory'";
+						if (!empty($keyword)) {
+							$selectUserSql .= " AND c.email LIKE '%$escapedKeyword%'";
+						}
+						$selectUserSql .= " GROUP BY c.email";
+					}
 
 					$selectUserQuery = mysqli_query($conn, $selectUserSql);
+					$emails = array();
 
-					$i = 0;
 					while ($result = mysqli_fetch_array($selectUserQuery)) {
-						$cEmail = $result['email'] ?? '';
-						if ($cEmail !== '' && strstr($cEmail, '@') && !strstr($cEmail, '�') && !strstr($cEmail, '(') && !strstr($cEmail, '<') && !strstr($cEmail, '>'))
-							echo $result['email'] . ", ";
+						$cEmail = trim($result['email']) ?? '';
+						$cEmail = str_replace('  ', '', $cEmail);
+						if (
+							$cEmail !== '' && strstr($cEmail, '@') && !strstr($cEmail, '�') &&
+							!strstr($cEmail, '(') && !strstr($cEmail, '<') && !strstr($cEmail, '>')
+						) {
+							$emails[] = $cEmail;
+							echo $cEmail . ", ";
+						}
 					}
+
+					$_SESSION['email_list_data'] = implode(", ", $emails);
 				} else if (isset($_POST['highestID'])) {
 					$total = 0;
 					for ($i = 0; $i <= $_POST['highestID']; $i++) {
@@ -675,11 +713,10 @@ if (isset($_POST['searchSubmit'])) {
 							mysqli_query($conn, $updateClientSql);
 						}
 					}
-
 					echo "Deleted " . $total . " clients";
-
-					/** CHANGE PASSWORD */
-				} else if (isset($_POST['changePassword']) || isset($_POST['pass1'])) {
+				}
+				/** CHANGE PASSWORD */
+				else if (isset($_POST['changePassword']) || isset($_POST['pass1'])) {
 					if (isset($_POST['changePW'])) {
 						if (isset($_POST['pass1']) && !empty($_POST['pass1'])) {
 							$message = ['status' => 'success', 'message' => "Your password has successfully been changed"];

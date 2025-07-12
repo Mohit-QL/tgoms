@@ -183,7 +183,6 @@ if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], "orderID
 						break;
 					}
 				}
-
 				if ($displayNumber < 0) {
 					$displayNumber = 0;
 				}
